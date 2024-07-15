@@ -1,0 +1,798 @@
+body{
+    margin: 0;
+    background-color: #F4F4F4;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+:root{
+    --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
+    --item1-filter: blur(30px);
+    --item1-zIndex: 11;
+    --item1-opacity: 0;
+
+    --item2-transform: translateX(0);
+    --item2-filter: blur(0px);
+    --item2-zIndex: 10;
+    --item2-opacity: 1;
+
+    --item3-transform: translate(50%,10%) scale(0.8);
+    --item3-filter: blur(10px);
+    --item3-zIndex: 9;
+    --item3-opacity: 1;
+}
+
+/* header */
+.logo{
+
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem 0.25rem 0 0.25rem;
+}
+
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #3D021E;
+}
+
+.brand{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand h1{
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+}
+
+.navbar ul li{
+    margin: 0 1.5rem 0 1.5rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: gray;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+.navbar ul li a:hover{
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* header end */
+
+/* banner*/
+.banner{
+    width: 100%;
+    height: 465px;
+    background-color: black;
+    background: url(assets/banner.png);
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-text p{
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0 0 0 10px;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+}
+
+.banner-text{
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-left: 2%;
+    height: 30%;
+    width: 40%;
+}
+
+.banner-btn{
+
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5rem 0 0 1rem;
+    margin-left: 2%;
+}
+
+.banner-btn button{
+    background-color: transparent;
+    color: black;
+    border: solid black 1px;
+    border-radius: 5px;
+    font-size: 0.75em;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+
+}
+
+/* banner end*/
+
+.our-category-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #3D021E;
+    width: 100%;
+    height: 5rem;
+}
+
+.our-category-title h3{
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    text-align: center;
+    color: white;
+    font-family: "Playfair Display", serif;
+}
+
+/* carousel */
+.carousel{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    padding-top: 4rem;
+    margin-bottom: 0.3rem;
+}
+.carousel .list{
+    position: absolute;
+    width: 1440px;
+    max-width: 90%;
+    height: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel .list .item{
+    position: absolute;
+    left: 0%;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+    transition: left 0.5s, opacity 0.5s, width 0.5s;
+}
+.carousel .list .item:nth-child(n + 6){
+    opacity: 0;
+}
+.carousel .list .item:nth-child(2){
+    z-index: 10;
+    transform: translateX(0);
+}
+.carousel .list .item img{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 1.5s;
+}
+
+.carousel .list .item .introduce{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(2) .introduce{
+    opacity: 1;
+    pointer-events: auto;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    transform:  translateY(-50%);
+    transition: opacity 0.5s;
+}
+.carousel .list .item .introduce .topic{
+    font-size: 4em;
+    font-weight: 500;
+}
+.carousel .list .item .introduce .des{
+    font-size: small;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    padding-top: 10px;
+}
+.carousel .list .item .introduce .seeMore{
+    font-family: Poppins;
+    margin-top: 1.2em;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #555;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: background 0.5s;
+}
+.carousel .list .item .introduce .seeMore:hover{
+    background: #eee;
+}
+.carousel .list .item:nth-child(1){
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    z-index: var(--item1-zIndex);
+    opacity: var(--item1-opacity);
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(3){
+    transform: var(--item3-transform);
+    filter: var(--item3-filter);
+    z-index: var(--item3-zIndex);
+}
+
+/* animation text in item2 */
+.carousel .list .item:nth-child(2) .introduce .title,
+.carousel .list .item:nth-child(2) .introduce .topic,
+.carousel .list .item:nth-child(2) .introduce .des,
+.carousel .list .item:nth-child(2) .introduce .seeMore{
+    opacity: 0;
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+}
+@keyframes showContent{
+    from{
+        transform: translateY(-30px);
+        filter: blur(10px);
+    }to{
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+.carousel .list .item:nth-child(2) .introduce .topic{
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(2) .introduce .des{
+    animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(2) .introduce .seeMore{
+    animation-delay: 1.6s;
+}
+
+/* next click */
+.carousel.next .item:nth-child(1){
+    animation: transformFromPosition2 0.5s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition2{
+    from{
+        transform: var(--item2-transform);
+        filter: var(--item2-filter);
+        opacity: var(--item2-opacity);
+    }
+}
+.carousel.next .item:nth-child(2){
+    animation: transformFromPosition3 0.7s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition3{
+    from{
+        transform: var(--item3-transform);
+        filter: var(--item3-filter);
+        opacity: var(--item3-opacity);
+    }
+}
+.carousel.next .item:nth-child(3){
+    animation: transformFromPosition4 0.9s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition4{
+    from{
+        transform: var(--item4-transform);
+        filter: var(--item4-filter);
+        opacity: var(--item4-opacity);
+    }
+}
+.carousel.next .item:nth-child(4){
+    animation: transformFromPosition5 1.1s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition5{
+    from{
+        transform: var(--item5-transform);
+        filter: var(--item5-filter);
+        opacity: var(--item5-opacity);
+    }
+}
+/* previous */
+.carousel.prev .list .item:nth-child(5){
+    animation: transformFromPosition4 0.5s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(4){
+    animation: transformFromPosition3 0.7s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(3){
+    animation: transformFromPosition2 0.9s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(2){
+    animation: transformFromPosition1 1.1s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition1{
+    from{
+        transform: var(--item1-transform);
+        filter: var(--item1-filter);
+        opacity: var(--item1-opacity);        
+    }
+}
+
+.arrows{
+    position: absolute;
+    bottom: 10px;
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#prev,
+#next{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: monospace;
+    border: 1px solid #5555;
+    font-size: large;
+    bottom: 20%;
+    left: 10%;
+}
+#next{
+    left: unset;
+    right: 10%;
+}
+
+.carousel.showDetail #prev,
+.carousel.showDetail #next{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel::before{
+    width: 500px;
+    height: 300px;
+    content: '';
+    background-image: linear-gradient(70deg, #3D021E, #B15380);
+    position: absolute;
+    z-index: -1;
+    border-radius: 20% 30% 80% 10%;
+    filter: blur(150px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    transition: 1s;
+}
+.carousel.showDetail::before{
+    transform: translate(-100%, -50%) rotate(90deg);
+    filter: blur(130px);
+}
+@media screen and (max-width: 991px){
+    /* ipad, tablets */
+    .carousel .list .item{
+        width: 90%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .title{
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 767px){
+    /* mobile */
+    .carousel{
+        height: 600px;
+    }
+    .carousel .list .item{
+        width: 100%;
+        font-size: 10px;
+    }
+    
+    .carousel .list{
+        height: 100%;
+    }
+    .carousel .list .item:nth-child(2) .introduce{
+        width: 50%;
+    }
+    
+    .carousel .list .item img{
+        width: 40%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail{
+        backdrop-filter: blur(10px);
+        font-size: small;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des,
+    .carousel.showDetail .list .item:nth-child(2) .detail .des{
+        height: 100px;
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+        display: flex;
+        width: max-content;
+        float: right;
+    }
+}
+
+
+/* Our Best Seller */
+.our-best-sellers{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.our-best-sellers .best-seller-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #3D021E;
+    width: 100%;
+    height: 5rem;
+
+}
+
+.best-seller-title h3{
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    text-align: center;
+    color: white;
+    font-family: "Playfair Display", serif;
+}
+
+.our-best-sellers .best-seller-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+}
+
+.best-seller-items .best-seller-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255,0.6);
+    width: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.9);
+}
+
+.best-seller-items .best-seller-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.best-seller-item h4{
+    font-size: 1.25rem;
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: center;
+    color: black;
+    font-family: "Playfair Display", serif;
+}
+
+.best-seller-item p{
+    font-size: 1rem;
+    text-align: center;
+    color: grey;
+    font-family: "Poppins", sans-serif;
+}
+/* Our Best Seller  End*/
+
+/* Special offer */
+.special-offers{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    width: 100%;
+}
+.special-offers img{
+    object-fit: fill;
+}
+
+/*Aroma-therapy */
+.aroma{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #3D021E;
+    width: 100%;
+    height: 3rem;
+}
+
+.aroma h3{
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    text-align: center;
+    color: white;
+    font-family: "Playfair Display", serif;
+}
+
+.aroma-therapy{
+    background-color: #3D021E;
+    padding: 30px ;
+    text-align: center;
+    width: 100%;
+    height: 275px;
+    display: flex;
+}
+
+.aroma-therapy .aroma-therapy-text{
+    background-color: rgba(255, 255, 255, 0.3);
+    fill: 0.5;
+    text-align: centre;
+    padding: 0 1.5rem 0 ;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 1rem;
+    margin-right: 2.9rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}  
+
+.aroma-therapy img{
+    width: 496px;
+    height: 275px;
+    border-radius: 1rem;
+    margin-right: 1.5rem;
+}
+
+
+/*Aroma-therapy-end */
+
+/*Our-Brand */
+.our-brand{
+    background-color: #3D021E;
+    padding: 30px ;
+    text-align: center;
+    width: 100%;
+    height: 275px;
+    display: flex;
+}
+
+.our-brand .our-brand-text{
+    background-color: rgba(255, 255, 255, 0.3);
+    fill: 0.5;
+    text-align: left;
+    padding: 0 1.5rem 0 ;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.our-brand .our-brand-text p{
+    margin-bottom: 1rem;
+}    
+
+.our-brand .our-brand-text button{
+    background-color: transparent;
+    color: #3D021E;
+    border: 1px solid ;
+    padding: 5px 8px;
+    bottom: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.our-brand img{
+    width: 496px;
+    height: 275px;
+    border-radius: 0 1rem 1rem 0;
+    margin-right: 2.9rem;
+}
+
+.our-brand h1{
+    color: white;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+
+}
+
+/*Our-Brand-end */
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .ingredients{
+    background-color: rgba(177, 83, 128,0.47);
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.footer .ingredients .ingredient{
+    color: #79043C;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.footer .ingredients .ingredient  i{
+    color: #79043C;
+    margin-right: 5px;
+    margin-top: 2px;
+    font-size: 1.5rem;
+}
+
+.footer .footer-details{
+    background-color: #3D021E;
+    color: rgb(250, 88, 166);
+    width: 100%;
+    height: 61%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    
+}
+
+.footer .footer-details ul{  
+    list-style: none;
+    line-height: 2rem;
+}
+
+.footer .footer-details .footer-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 0.5;
+    margin-right: 20px;
+
+}
+
+
+.footer .footer-details .footer-column li{
+    color: white;
+}
+
+.footer .footer-details .footer-column li:hover{
+    color: #79043C;
+}
+
+.footer .footer-details h3{
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.text h3{
+    padding-left: 2rem;
+}
+
+.email-input{
+    margin-bottom: 1.4rem;
+    width: 100%;
+}
+
+.email-input input{
+
+    height: 1.5rem;
+    border: none;
+    margin-left: 2.5rem;
+    margin-right: 0rem;
+    width: 60%;
+    color: #fa58a6;
+    background-color: #3D021E;
+    border-bottom: solid 1px ;
+}
+
+.email-input input::placeholder{
+    color: #fa58a6;
+}
+
+.email-input button{
+
+    height: 1.5rem;
+    border: solid #fa58a6 1px;
+    color: #fa58a6;
+    border-radius: 4px;
+    background-color: transparent;
+    margin-left: 0;
+    width: 60;
+}
+
+
+.footer .social-media{
+    background-color: #280114;
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .social-media .number  i{
+    color: #fa58a6;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+
+.footer .social-media .number{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.footer .social-media .social-icons  i{
+    color: #fa58a6;
+    margin-right: 20px;
+}
+
+.footer .copyright{
+    background-color: #14010A;
+    width: 100%;
+    height: 8%;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .copyright .copy{
+    margin-left: 20px;
+}
+
+.footer .copyright .privacy{
+    margin-right: 20px;
+}
+
+/* footer end */
+
+/* Animation */
+    @keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+
+  .block {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }

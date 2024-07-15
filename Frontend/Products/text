@@ -1,0 +1,17 @@
+<header>
+            <h1>LIST PRODUCT</h1>
+            <div class="iconCart">
+                <img src="icon.png">
+                <div class="totalQuantity">0</div>
+            </div>
+        </header>
+
+
+
+        <header>
+            <h1>Products</h1>
+            <div class="iconCart">
+                <img src="icon.png">
+                <div class="totalQuantity">0</div>
+            </div>
+        </header>

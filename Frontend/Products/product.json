@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Body Lotion 1",
+        "price": 999,
+        "image": "images/1.png"
+    },
+    {
+        "id": 2,
+        "name": "Body Lotion 2",
+        "price": 999,
+        "image": "images/1.png"
+    },
+    {
+        "id": 3,
+        "name": "Shower Gel 1",
+        "price": 999,
+        "image": "images/2.png"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Shower Gel 2",
+        "price": 999,
+        "image": "images/2.png"
+    },
+    {
+        "id": 5,
+        "name": "Bath Salt 1",
+        "price": 999,
+        "image": "images/3.png"
+    },
+    {
+        "id": 6,
+        "name": "Bath Salt 2",
+        "price": 999,
+        "image": "images/3.png"
+    }
+]
